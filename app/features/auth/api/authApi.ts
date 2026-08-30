@@ -1,7 +1,7 @@
 import { apiClient } from "@/services/http/client";
 import {
   AuthResponse,
-  LoginPayload,
+ LoginFormValues,
   RegisterPayload,
 } from "../types/auth.types";
 
@@ -12,7 +12,7 @@ import {
 // } from "@/features/auth/types/auth.types";
 
 export const authApi = {
-  login: async (data: LoginPayload): Promise<AuthResponse> => {
+  login: async (data: LoginFormValues): Promise<AuthResponse> => {
     const response = await apiClient.post<AuthResponse>("/auth/login", data);
     return response.data;
   },

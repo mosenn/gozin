@@ -1,3 +1,6 @@
+import z from "zod";
+import { LoginSchema } from "../schemas/loginSchema";
+import { registerSchema } from "../schemas/RegisterSchema";
 
 export type User = {
   id: string;
@@ -7,10 +10,8 @@ export type User = {
   role: "user" | "admin";
 };
 
-export type LoginPayload = {
-  identifier: string; // ایمیل یا نام کاربری
-  password: string;
-};
+export type LoginFormValues = z.infer<typeof LoginSchema>;
+export type RegisterFormValues = z.infer<typeof registerSchema>;
 
 export type RegisterPayload = {
   name: string;
