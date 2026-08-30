@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+* {
+
+  box-sizing: border-box;
+}
+
+@theme {
+  /* 📱 بریک‌پوینت‌های استاندارد */
+  --breakpoint-sm5: 500px; /* تبلت */
+  --breakpoint-sm6: 600px; /* تبلت */
+  --breakpoint-tab: 768px; /* تبلت */
+  --breakpoint-des: 900px; /* تبلت */
+  --breakpoint-lg: 1024px; /* لپ‌تاپ و دسکتاپ متوسط */
+  --breakpoint-xl: 1440px; /* دسکتاپ بزرگ */
+  --breakpoint-xxl: 1920px; /* مانیتورهای عریض و 2K */
+
+
+  /* =========================================================
+     فواصل سیال مدرن (Fluid Design Tokens)
+     دقیقاً از ۱۶px در موبایل تا ۶۴px در دسکتاپ نرم کش می‌آید
+     ========================================================= */
+  --spacing-container-x: clamp(1rem, 3.5vw, 4rem); /* پدینگ افقی کانتینر */
+  --spacing-section-y: clamp(3rem, 6vw, 8rem);     /* فاصله بین سکشن‌ها (۴۸px تا ۱۲۸px) */
+
+  /* ------------------------------------------------------------ انیمیشن‌ها */
+  --animate-shake: shake 1s ease-in-out infinite;
+}
+
+@keyframes shake {
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+
+/* =========================================================
+   فاصله‌های هوشمند و واکنش‌گرا (Responsive Spacing Tokens)
+   ========================================================= */
+:root {
+  /* 📱 ۱. مقادیر پایه (موبایل) */
+  --spacing-container-x: 16px;
+  --spacing-section: 48px;
+
+  /* 📲 ۲. تبلت (از 768px به بالا) */
+  @media (width >= 768px) {
+    --spacing-container-x: 24px;
+    --spacing-section: 64px;
+  }
+
+
+  @media (width >= 1024px) {
+    --spacing-container-x: 40px;
+    --spacing-section: 96px;
+  }
+
+  /* 🖥️ ۴. دسکتاپ بزرگ (از 1440px به بالا) */
+  @media (width >= 1440px) {
+    --spacing-container-x: 64px;
+    --spacing-section: 128px;
+  }
+
+  /* 🖥️ ۵. اولترا واید و 2K (از 1920px به بالا) */
+  @media (width >= 1920px) {
+    --spacing-container-x: 80px;
+    --spacing-section: 160px;
+  }
+}
