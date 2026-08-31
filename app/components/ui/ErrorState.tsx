@@ -17,11 +17,11 @@ export default function ErrorState({
 }: ErrorStateProps) {
   return (
     <div className="flex min-h-[320px] flex-col items-center justify-center px-6 text-center">
-      <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-red-50">
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-red-50">
         {/* icon */}
       </div>
 
-      <h2 className="mb-2 text-lg font-semibold text-gray-900">
+      <h2 className="mb-2 text-lg font-semibold text-purple-900">
         {title}
       </h2>
 
@@ -29,16 +29,16 @@ export default function ErrorState({
         {message}
       </p>
 
-      {onRetry && (
+      {/* {onRetry && ( */}
         <button
           type="button"
           onClick={onRetry}
-          className="inline-flex items-center gap-2 rounded-lg bg-gray-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+          className="inline-flex items-center gap-2 rounded-lg bg-purple-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
         >
           {/* icon */}
           تلاش مجدد
         </button>
-      )}
+      {/* )} */}
     </div>
   );
 }
