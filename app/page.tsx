@@ -1,6 +1,6 @@
 import { Container } from "./components/layouts/Container";
 import { Section } from "./components/layouts/Section";
-import Loading from "./components/ui/Loading";
+import Loading from "@/components/ui/Loading";
 
 export default function HomePage() {
   return (
@@ -37,7 +37,6 @@ export default function HomePage() {
           </div>
         </Section>
       </Container>
-      <Loading/>
     </main>
   );
 }
