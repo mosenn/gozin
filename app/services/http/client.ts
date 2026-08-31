@@ -29,7 +29,7 @@ apiClient.interceptors.response.use(
 
     if (status === 401) {
       // بعداً:
-      // refresh token handle / redirect login
+      // refresh token handle / redirect register
     }
 
     if (status === 403) {

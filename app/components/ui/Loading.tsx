@@ -1,5 +1,5 @@
-import { ClipLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners";
 
 export default function Loading() {
-  return <ClipLoader size={40} />;
+  return <div className="bg-red"><BeatLoader/> </div>;
 }
