@@ -20,3 +20,24 @@ apiClient.interceptors.request.use(
   },
   (error) => Promise.reject(error)
 );
+
+apiClient.interceptors.response.use(
+  (response) => response,
+
+  (error) => {
+    const status = error.response?.status;
+
+    if (status === 401) {
+      // بعداً:
+      // refresh token handle / redirect login
+    }
+
+    if (status === 403) {
+      // بعداً:
+      // نمایش خطای عدم دسترسی
+      //toast for example
+    }
+
+    return Promise.reject(error);
+  }
+);
