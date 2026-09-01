@@ -1,5 +1,7 @@
 
+import { MdErrorOutline } from "react-icons/md";
 import styles from "./ErrorState.module.css";
+import { FiRefreshCw } from "react-icons/fi";
 
 type ErrorStateProps = {
   title?: string;
@@ -18,9 +20,7 @@ export default function ErrorState({
 }: ErrorStateProps) {
   return (
     <div className={styles.container}>
-      <div className={styles.icon}>
-        {/* icon */}
-      </div>
+       <MdErrorOutline className={styles.icon} />
 
       <h2 className={styles.title}>
         {title}
@@ -36,7 +36,7 @@ export default function ErrorState({
         onClick={onRetry}
         className={styles.button}
       >
-        {/* icon */}
+         <FiRefreshCw />
         تلاش مجدد
       </button>
       {/* )} */}
