@@ -9,7 +9,7 @@ interface ContainerProps {
 export function Container({ children, className = "" }: ContainerProps) {
   return (
     <div
-      className={`mx-auto w-full max-w-7xl px-(--spacing-container-x) py-(--spacing-container-y) ${className}`}
+      className={`mx-auto w-full max-w-7xl px-container-x py-(--spacing-container-y) ${className}`}
     >
       {children}
     </div>
