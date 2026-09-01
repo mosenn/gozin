@@ -1,4 +1,5 @@
 
+import styles from "./ErrorState.module.css";
 
 type ErrorStateProps = {
   title?: string;
@@ -16,28 +17,28 @@ export default function ErrorState({
   onRetry,
 }: ErrorStateProps) {
   return (
-    <div className="flex min-h-[320px] flex-col items-center justify-center px-6 text-center">
-      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-red-50">
+    <div className={styles.container}>
+      <div className={styles.icon}>
         {/* icon */}
       </div>
 
-      <h2 className="mb-2 text-lg font-semibold text-purple-900">
+      <h2 className={styles.title}>
         {title}
       </h2>
 
-      <p className="mb-6 max-w-md text-sm leading-6 text-gray-500">
+      <p className={styles.message}>
         {message}
       </p>
 
       {/* {onRetry && ( */}
-        <button
-          type="button"
-          onClick={onRetry}
-          className="inline-flex items-center gap-2 rounded-lg bg-purple-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
-        >
-          {/* icon */}
-          تلاش مجدد
-        </button>
+      <button
+        type="button"
+        onClick={onRetry}
+        className={styles.button}
+      >
+        {/* icon */}
+        تلاش مجدد
+      </button>
       {/* )} */}
     </div>
   );

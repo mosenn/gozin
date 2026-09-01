@@ -1,0 +1,22 @@
+@reference "tailwindcss";
+
+.container {
+    @apply flex min-h-[320px] flex-col items-center justify-center px-6 text-center;
+}
+
+.icon {
+    @apply mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-red-50;
+
+}
+
+.title {
+    @apply mb-2 text-lg font-semibold text-purple-900;
+}
+
+.message {
+    @apply mb-6 max-w-md text-sm leading-6 text-gray-500;
+}
+
+.button {
+    @apply inline-flex items-center gap-2 rounded-lg bg-purple-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2;
+}
