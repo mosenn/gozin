@@ -9,9 +9,13 @@ function Registerform() {
     const {register,handleSubmit,reset,formState}=useForm<RegisterFormValues>({
         resolver:zodResolver(registerSchema)
     })
+
+   async function onSubmit(formdata:RegisterFormValues) {
+    
+   }
   return (
 <Container>
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
 
     </form>
 </Container>
