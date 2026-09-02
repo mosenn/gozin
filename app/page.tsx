@@ -6,7 +6,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-slate-950 text-slate-100" dir="rtl">
       <Container>
         {/* سکشن ۱ */}
-        <Section className="rounded-2xl border border-slate-800 bg-slate-900 p-6 ">
+        <Section className="rounded-2xl border border-slate-800 bg-green-900 p-6">
           <h2 className="text-xl font-bold text-blue-400">
             🎬 فیلم‌های پیشنهادی
           </h2>
