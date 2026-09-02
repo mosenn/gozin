@@ -127,7 +127,7 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 p-10">
+    <main className="min-h-screen  p-10">
       <div className="mx-auto max-w-4xl space-y-8">
 
         <h1 className="text-3xl font-bold">
@@ -138,7 +138,7 @@ export default function LoginPage() {
         {/* Register */}
         {/* ========================= */}
 
-        <section className="rounded-xl bg-white p-6 shadow">
+        <section className="rounded-xl  p-6 shadow">
           <h2 className="mb-5 text-xl font-semibold">
             Register
           </h2>
@@ -206,7 +206,7 @@ export default function LoginPage() {
         {/* Login */}
         {/* ========================= */}
 
-        <section className="rounded-xl bg-white p-6 shadow">
+        <section className="rounded-xl  p-6 shadow">
           <h2 className="mb-5 text-xl font-semibold">
             Login
           </h2>
@@ -259,7 +259,7 @@ export default function LoginPage() {
         {/* Profile */}
         {/* ========================= */}
 
-        <section className="rounded-xl bg-white p-6 shadow">
+        <section className="rounded-xl  p-6 shadow">
           <h2 className="mb-5 text-xl font-semibold">
             Profile
           </h2>
