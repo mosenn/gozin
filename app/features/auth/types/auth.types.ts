@@ -4,23 +4,17 @@ import { registerSchema } from "../schemas/RegisterSchema";
 
 export type User = {
   id: string;
-  name: string;
   email: string;
-  avatarUrl?: string;
-  role: "user" | "admin";
+  username: string | null;
+  role: "USER" | "ADMIN";
 };
 
 export type LoginFormValues = z.infer<typeof LoginSchema>;
 export type RegisterFormValues = z.infer<typeof registerSchema>;
 
-export type RegisterPayload = {
-  name: string;
-  email: string;
-  password: string;
-};
 
-export type AuthResponse = {
+export type LoginResponse = {
+  message: string;
   user: User;
-  token: string;
-  refreshToken?: string;
-};
+  };
+

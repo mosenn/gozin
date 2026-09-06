@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { registerAction } from "../services/RegisterAction";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 
 function Registerform() {
@@ -19,8 +20,11 @@ function Registerform() {
    async function onSubmit(formdata:RegisterFormValues) {
     const result = await registerAction(formdata);
     if (result.success) {
-    router.push("/login");
-  }
+  toast.success(result.message);
+  router.push("/login");
+} else {
+  toast.error(result.message);
+}
     
    }
 
