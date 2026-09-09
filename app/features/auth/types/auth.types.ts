@@ -18,3 +18,9 @@ export type LoginResponse = {
   user: User;
   };
 
+  export type ProfileResponse = {
+  data: User;
+  message: string;
+  statusCode: number;
+};
+

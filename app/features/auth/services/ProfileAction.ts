@@ -1,13 +1,14 @@
 import { api } from "@/store/api";
-import { User } from "../types/auth.types";
+import { ProfileResponse} from "../types/auth.types";
 
 export const profileApi = api.injectEndpoints({
   endpoints: (builder) => ({
-    getProfile: builder.query<User, void>({
+    getProfile: builder.query<ProfileResponse, void>({
       query: () => ({
         url: "/auth/profile",
         method: "GET",
       }),
+      providesTags: ["Profile"],
     }),
   }),
 });

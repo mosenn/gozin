@@ -9,6 +9,7 @@ import {
 const baseQuery = fetchBaseQuery({ 
   baseUrl: process.env.NEXT_PUBLIC_API_URL, 
   credentials: "include", 
+  
  
   prepareHeaders: (headers) => { 
     headers.set("Content-Type", "application/json"); 
@@ -44,6 +45,7 @@ const baseQueryWithReauth: BaseQueryFn<
  
 export const api = createApi({ 
   reducerPath: "api", 
+  tagTypes: ["Profile"],
  
   baseQuery: baseQueryWithReauth, 
  

@@ -30,7 +30,7 @@ export default function AuthProvider({
     }
 
     // مسیرهای ادمین فقط برای ADMIN
-    if (pathname.startsWith("/admin") && user.role !== "ADMIN") {
+    if (pathname.startsWith("/admin") && user.data.role !== "ADMIN") {
       router.replace("/dashboard");
     }
   }, [isLoading, isError, user, pathname, router]);
@@ -44,7 +44,7 @@ export default function AuthProvider({
   }
 
   // جلوگیری از نمایش موقت صفحه Admin برای USER
-  if (pathname.startsWith("/admin") && user.role !== "ADMIN") {
+  if (pathname.startsWith("/admin") && user.data.role !== "ADMIN") {
     return null;
   }
 
