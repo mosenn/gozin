@@ -21,12 +21,12 @@ const LoginForm = () => {
      
        try {
       const result = await login(formData).unwrap();
-      console.log(result.user);
+    
       
 
       toast.success(result.message);
 
-      router.push("/dashboard");
+      router.push("/");
     } catch (error) {
       const message =
         error &&
@@ -45,7 +45,14 @@ const LoginForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
             <Input placeholder="ایمیل خود را وارد کنید" {...register("email")}/>
+            {formState.errors.email && (
+  <p>{formState.errors.email.message}</p>
+)}
     <Input placeholder="رمز خود را وارد کنید" {...register("password")}/>
+    {formState.errors.password && (
+  <p>{formState.errors.password.message}</p>
+)}
+    
     <Button type="submit" disabled={formState.isSubmitting || !formState.isValid}>
         {formState.isSubmitting?"در حال ورود":"ورود"}
     </Button>

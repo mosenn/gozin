@@ -26,7 +26,7 @@ export default function UserAuth() {
   }
 };
 
-console.log("USER IN HEADER:", user);
+
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -51,6 +51,7 @@ console.log("USER IN HEADER:", user);
       <div>
         <p className=''>{user.data.email}</p>
         <span className='text-red-500'>{user.data.role}</span>
+        <Link href={`/dashboard/${user.data.id}`}>داشبورد</Link>
       </div>
       <button
   type="button"
