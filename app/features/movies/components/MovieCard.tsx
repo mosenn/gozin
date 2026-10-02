@@ -1,4 +1,7 @@
+
+import Link from "next/link";
 import { Title } from "../type/movies.type";
+import { Button } from "@/components/ui/Button";
 
 
 type Props = {
@@ -18,9 +21,10 @@ function MovieCard({ movie }: Props) {
 
       <p className="text-sm text-gray-500">{movie.year}</p>
 
-      <button className="mt-3 w-full rounded bg-black px-3 py-2 text-white">
-        دیدن جزئیات
-      </button>
+      <Button className="mt-3 w-full rounded bg-black px-3 py-2 text-white">
+        <Link href={`/movies/${movie.id}`}> دیدن جزئیات</Link>
+       
+      </Button>
     </div>
   );
 }

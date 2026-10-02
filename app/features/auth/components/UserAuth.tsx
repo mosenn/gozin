@@ -51,7 +51,7 @@ export default function UserAuth() {
       <div>
         <p className=''>{user.data.email}</p>
         <span className='text-red-500'>{user.data.role}</span>
-        <Link href={`/dashboard/${user.data.id}`}>داشبورد</Link>
+        {user.data.role === "ADMIN" && (<Link href={`/dashboard/${user.data.id}`}>داشبورد</Link>)}
       </div>
       <button
   type="button"
