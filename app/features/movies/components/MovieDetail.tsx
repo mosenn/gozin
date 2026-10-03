@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Title } from '../type/movies.type';
 import AddToList from './AddToList';
+export const instant = false;
 
 
 type Props = {

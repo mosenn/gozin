@@ -1,4 +1,5 @@
 import UserAuth from "@/features/auth/components/UserAuth";
+import { Suspense } from "react";
 
 
 
@@ -13,8 +14,10 @@ export default function Header() {
           Logo
         </div>
 
-        {/* User Authentication */}
+       
+    <Suspense fallback={null}>
         <UserAuth />
+      </Suspense>
 
       </div>
     </header>

@@ -1,4 +1,9 @@
-export async function getDetailMovie(id:string):Promise<Title> {
+import { cacheLife } from "next/cache";
+import { Title } from "../type/movies.type";
+
+export async function getDetailMovie(id:string):Promise<Title|undefined> {
+    "use cache";
+    cacheLife("hours");
 try{
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/titles/${id}`)
     if(!res.ok) return;

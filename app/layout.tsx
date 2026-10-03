@@ -4,6 +4,8 @@ import "./globals.css";
 import StoreProvider from './provider/reduxProvider';
 import { ToastContainer } from "react-toastify";
 import Header from './components/layouts/Header';
+import { Suspense } from "react";
+import AuthProvider from "./provider/AuthProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,8 +30,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
          <StoreProvider>
-          <Header />
-        {children}
+          
+    
+      <Header />
+      {children}
+  
+  
 
         <ToastContainer
               position="top-right"
