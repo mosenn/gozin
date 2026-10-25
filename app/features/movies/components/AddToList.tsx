@@ -22,7 +22,6 @@ type Props = {
 function AddToList({ movieId }: Props) {
   const [getMyLists, { data, isLoading }] = useLazyGetMyListsQuery();
   const [addToList, { isLoading: isAdding }] = useAddToListMutation();
-
   const [open, setOpen] = useState(false);
   const [selectedList, setSelectedList] = useState("");
   const [order, setOrder] = useState(1);

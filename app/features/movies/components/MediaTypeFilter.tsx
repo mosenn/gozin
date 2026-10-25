@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/select';
 import { useMovieFilters } from '../hooks/useMovieFilters';
 
-const mediaTypes = ['MOVIE', 'ANIME', 'SERIS', 'KDRAMA'];
+const mediaTypes = ['MOVIE', 'ANIME', 'SERIES', 'KDRAMA'];
 
 function MediaTypeFilter() {
   const { mediaType, setMediaType } = useMovieFilters();

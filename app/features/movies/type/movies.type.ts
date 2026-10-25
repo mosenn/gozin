@@ -33,3 +33,4 @@ export type TitlesResponse = {
     totalPages: number;
   };
 };
+

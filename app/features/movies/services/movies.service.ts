@@ -14,9 +14,10 @@ export async function getTitles({ page = 1, mediaType, search, genre, year }: Ge
     'use cache';
 
   cacheLife({
-    stale: 43200,
-    revalidate: 43200,
-  });
+  stale: 86400,
+  revalidate: 86400,
+  expire: 604800,
+});
     try {
         
         const params = new URLSearchParams();

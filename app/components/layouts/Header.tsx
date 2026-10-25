@@ -1,4 +1,5 @@
 import UserAuth from "@/features/auth/components/UserAuth";
+import Link from "next/link";
 import { Suspense } from "react";
 
 
@@ -16,6 +17,7 @@ export default function Header() {
 
        
     <Suspense fallback={null}>
+      <Link href={`/dahboard/lists`}>داشبورد</Link>
         <UserAuth />
       </Suspense>
 

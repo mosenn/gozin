@@ -9,6 +9,15 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "cdn.myanimelist.net",
       },
+      {
+      protocol: "https",
+      hostname: "i.ibb.co",
+    },
+    {
+        protocol: "https",
+        hostname: "image.tmdb.org",
+        pathname: "/t/p/**",
+      },
     ],
   },
 };

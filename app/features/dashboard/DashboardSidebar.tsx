@@ -1,7 +1,12 @@
 "use client";
 
 import Link from "next/link";
-
+import { usePathname } from "next/navigation";
+import {
+  LayoutDashboard,
+  List,
+  Plus,
+} from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -13,48 +18,50 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
-type Props = {
-  id: string;
-};
+const items = [
+  {
+    title: "داشبورد",
+    url: "/dashboard",
+    icon: LayoutDashboard,
+  },
+  {
+    title: "لیست‌ها",
+    url: "/dashboard/lists",
+    icon: List,
+  },
+  {
+    title: "ساخت لیست",
+    url: "/dashboard/lists/create",
+    icon: Plus,
+  },
+];
 
-export default function DashboardSidebar({ id }: Props) {
+export default function DashboardSidebar() {
+  const pathname = usePathname();
+
   return (
-    <Sidebar>
+    <Sidebar side="right">
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Dashboard</SidebarGroupLabel>
+          <SidebarGroupLabel>داشبورد</SidebarGroupLabel>
 
           <SidebarGroupContent>
             <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  render={
-                    <Link href={`/dashboard/${id}`}>
-                      Overview
-                    </Link>
-                  }
-                />
-              </SidebarMenuItem>
+              {items.map((item) => {
+                const Icon = item.icon;
+                const isActive = pathname === item.url;
 
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  render={
-                    <Link href={`/dashboard/${id}/profile`}>
-                      Profile
-                    </Link>
-                  }
-                />
-              </SidebarMenuItem>
-
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  render={
-                    <Link href={`/dashboard/${id}/settings`}>
-                      Settings
-                    </Link>
-                  }
-                />
-              </SidebarMenuItem>
+                return (
+                  <SidebarMenuItem key={item.url}>
+                    <SidebarMenuButton isActive={isActive} >
+                      <Link href={item.url} className="flex gap-1">
+                        <Icon />
+                        <span>{item.title}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
