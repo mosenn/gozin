@@ -6,7 +6,8 @@ import { cn } from "cn"
 
 
 import { XIcon } from "lucide-react"
-import { Button } from "./Button"
+import { Button } from '@/components/ui/Button';
+
 
 
 function Sheet({ ...props }: SheetPrimitive.Root.Props) {
